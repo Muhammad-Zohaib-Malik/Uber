@@ -53,4 +53,8 @@ export const login = async (req, res) => {
   res.cookie('token', token);
 
   res.status(200).json({ token, user });
-}
+};
+
+export const getUserProfile = async (req, res, next) => {
+  res.status(200).json(req.user);
+};
